@@ -52,7 +52,7 @@ def site_map():
             url = url_for(rule.endpoint, **(rule.defaults or {}))
             links.append((url, rule.endpoint))
     # links is now a list of url, endpoint tuples
-    print links
+    print(links)
     return render_template('login.html', title='Login')
 
 
