@@ -5,3 +5,5 @@
 *.db
 .env
 .idea/
+poetry.lock
+migrations/

@@ -5,7 +5,7 @@ description = ""
 authors = ["Boyarkina Darya <bo_dary@mail.ru>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 alembic = "1.0.0"
 aniso8601 = "3.0.2"
 certifi = "2022.12.7"
@@ -37,8 +37,9 @@ Flask-HTTPAuth = "3.2.4"
 Flask-Login = "0.4.1"
 Flask-RESTful = "0.3.6"
 Flask-Testing = "0.7.1"
-psycopg2 = "^2.9.6"
+psycopg2 = "^2.9.6" # для Windows
 SQLAlchemy = "1.4.48"
+#psycopg2-binary = "^2.9.6" # для Linux
 
 [tool.poetry.dev-dependencies]
 

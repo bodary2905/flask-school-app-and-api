@@ -13,38 +13,49 @@ This is a Flask app with an API layer. It has the following properties:
 
 ## Installation and Set Up
 
-Clone the repo from GitHub:
+1. Clone the repo from GitHub:
 
-```
-https://github.com/bodary2905/flask-school-app-and-api.git
-```
+   ```
+   https://github.com/bodary2905/flask-school-app-and-api.git
+   ```
 
-Install the required packages:
+2. Install the required packages:
 
-```
-poetry install
-```
+   При установке на Linux - в `pyproject.toml` раскомментировать `psycopg2-binary` и закомментировать `psycopg2`. Затем
+   выполнить команду:
+   ```
+   poetry install
+   ```
 
-Установить Postgres по [инструкции](https://winitpro.ru/index.php/2019/10/25/ustanovka-nastrojka-postgresql-v-windows/).
-Запомнить имя пользователя (`user`), пароль (`password`) и создать базу данных `database_name` - эти данные понадобятся
-на следующем шаге
 
-Create a `.env` file with the following keys:
+3. Создать файл `.env` в корне проекта со следующими ключами:
 
-```
-SECRET_KEY=school # любое ваше слово - используется для шифрования паролей
-DATABASE_URI=postgresql+psycopg2://user:password@hostname/database_name # поменять user, password, hostname, database_name
-TEST_DATABASE_URI=- # это БД для unit-тестов - для нас не интересно
-ENVIRONMENT=development #  или production - на что влияет - не разбиралась 
-```
+   ```
+   SECRET_KEY=school
+   DATABASE_URI=postgresql+psycopg2://postgres:password@localhost:5433/school_dev
+   TEST_DATABASE_URI=-
+   ENVIRONMENT=development
+   ```
+   В `DATABASE_URI` порт `5433` - для запуска Postgres в Docker контейнере, если Postgres будет развернут локально - то
+   установить порт `5432`
 
-Initialize, migrate, and upgrade the database:
+3. Запустить Postgres в Docker контейнере:
 
-```
-python manage.py db init
-python manage.py db migrate
-python manage.py db upgrade
-```
+    1. перейти в папку **postgres**: `cd postgres`
+    2. выполнить команду: `docker-compose up`
+    3. после окончания работы выполнить: `docker-compose down`
+
+   Либо установить Postgres локально
+   по [инструкции](https://winitpro.ru/index.php/2019/10/25/ustanovka-nastrojka-postgresql-v-windows/).
+
+   При первом запуске - накатить миграции (создать все нужные таблицы):
+
+   ```
+   python manage.py db init
+   python manage.py db migrate
+   python manage.py db upgrade # создаем таблицы
+   python manage.py db upgrade # удаляем таблицы
+   ```
 
 ## Launching the Program
 
