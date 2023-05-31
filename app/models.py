@@ -43,7 +43,7 @@ class User(db.Model, UserMixin):
     def password(self, password):
         """Sets password to a hashed password
         """
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = generate_password_hash(password, method='plain')
 
     def verify_password(self, password):
         """Checks if password matches
@@ -92,7 +92,6 @@ def load_user(user_id):
 
 
 class Person(db.Model):
-
     first_name = db.Column(db.String(50))
     last_name = db.Column(db.String(50))
     email_address = db.Column(db.String(255), unique=True, primary_key=True)
@@ -109,11 +108,10 @@ class Person(db.Model):
 
 
 class Student(Person):
-
     __tablename__ = "students"
 
     email_address = db.Column(db.String(255), db.ForeignKey(
-                                "person.email_address"))
+        "person.email_address"))
     student_id = db.Column(db.String(50), unique=True, primary_key=True)
     major_id = db.Column(db.String(50), db.ForeignKey("subjects.subject_id"))
     minors = db.relationship("Subject", secondary=student_subject_table,
@@ -130,11 +128,10 @@ class Student(Person):
 
 
 class Teacher(Person):
-
     __tablename__ = "teachers"
 
     email_address = db.Column(db.String(255), db.ForeignKey(
-                                "person.email_address"))
+        "person.email_address"))
     staff_id = db.Column(db.String(50), unique=True, primary_key=True)
     subjects_taught = db.relationship("Subject", backref="teacher",
                                       lazy="dynamic")
@@ -150,7 +147,6 @@ class Teacher(Person):
 
 
 class Subject(db.Model):
-
     __tablename__ = "subjects"
 
     subject_id = db.Column(db.String(50), unique=True, primary_key=True)

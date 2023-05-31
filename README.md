@@ -54,7 +54,7 @@ This is a Flask app with an API layer. It has the following properties:
    python manage.py db init
    python manage.py db migrate
    python manage.py db upgrade # создаем таблицы
-   python manage.py db upgrade # удаляем таблицы
+   python manage.py db downgrade # удаляем таблицы
    ```
 
 ## Launching the Program
