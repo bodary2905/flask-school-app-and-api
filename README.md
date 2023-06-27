@@ -95,6 +95,16 @@ Displaying a paginated list of subjects:
 Updating a student:
 ![Updating Student](screenshots/api_update_student.png)
 
+## Web App
+
+После запуска сервиса его web-интерфейс можно открыть в браузере по адресу `127.0.0.1:5000`. Изначально в системе
+зарегистрирован тестовый пользователь со следующими credentials:
+
+```
+username: testuser
+password: testpassword
+```
+
 Login:
 ![User Login](screenshots/app_login.png)
 
