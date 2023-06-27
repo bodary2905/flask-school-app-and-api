@@ -2,7 +2,7 @@
 
 Данный репозиторий является кастомизированным fork-ом
 [flask-school-app-and-api](https://github.com/mbithenzomo/flask-school-app-and-api). В инструкции ниже вы встретите как
-оригинальный текст на английском, так и мои комментарии на русском. Как будет время - все переведу на русский ;)
+оригинальный текст на английском, так и мои комментарии. Как будет время - все переведу на русский ;)
 
 This is a Flask app with an API layer. It has the following properties:
 
@@ -20,7 +20,7 @@ This is a Flask app with an API layer. It has the following properties:
 1. Клонировать репозиторий с GitHub:
 
    ```
-   https://github.com/bodary2905/flask-school-app-and-api.git
+   git clone https://github.com/bodary2905/flask-school-app-and-api.git
    ```
 
 2. Установить библиотеки с помощью **poetry**:
@@ -113,5 +113,6 @@ Displaying all subjects:
 ## Авторы
 
 Copyright (c) 2023 [Boyarkina Darya](https://github.com/bodary2905)
+
 Copyright (c) 2018 [Mbithe Nzomo](https://github.com/mbithenzomo)
 
