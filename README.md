@@ -1,5 +1,9 @@
 # School App and API - демо приложение для тренировки написания автотестов
 
+Данный репозиторий является кастомизированным fork-ом
+[flask-school-app-and-api](https://github.com/mbithenzomo/flask-school-app-and-api). В инструкции ниже вы встретите как
+оригинальный текст на английском, так и мои комментарии на русском. Как будет время - все переведу на русский ;)
+
 This is a Flask app with an API layer. It has the following properties:
 
 1. It has the following relational entities:
@@ -11,15 +15,15 @@ This is a Flask app with an API layer. It has the following properties:
 4. It has endpoints to CREATE, UPDATE, and DELETE each entity in the application
 5. Only an authorized user can access the endpoints
 
-## Installation and Set Up
+## Развертывание сервиса
 
-1. Clone the repo from GitHub:
+1. Клонировать репозиторий с GitHub:
 
    ```
    https://github.com/bodary2905/flask-school-app-and-api.git
    ```
 
-2. Install the required packages:
+2. Установить библиотеки с помощью **poetry**:
 
    При установке на Linux - в `pyproject.toml` раскомментировать `psycopg2-binary` и закомментировать `psycopg2`. Затем
    выполнить команду:
@@ -57,11 +61,9 @@ This is a Flask app with an API layer. It has the following properties:
    python manage.py db downgrade # удаляем таблицы
    ```
 
-## Launching the Program
+## Запуск сервиса
 
-Run ```python run.py```. You may
-use [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) for Google
-Chrome to run the API.
+Активировать poetry виртуальное окружение и выполнить команду ```python run.py```
 
 ## API Endpoints
 
@@ -77,7 +79,7 @@ Chrome to run the API.
 | `/api/v1/subjects`             | GET, POST        | View all subjects, add a subject        | TRUE           |
 | `/api/v1/subjects/<string:id>` | GET, PUT, DELETE | View, edit, and delete a single subject | TRUE           |
 
-## Sample API Requests
+## Примеры API запросов
 
 Registering and logging in to get a JWT token:
 ![User Registration](screenshots/api_register.png)
@@ -108,6 +110,8 @@ Displaying all teachers:
 Displaying all subjects:
 ![Subjects](screenshots/app_subjects.png)
 
-## Credits
+## Авторы
 
+Copyright (c) 2023 [Boyarkina Darya](https://github.com/bodary2905)
 Copyright (c) 2018 [Mbithe Nzomo](https://github.com/mbithenzomo)
+
